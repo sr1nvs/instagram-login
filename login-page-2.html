@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <link href = "styles.css" rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bordered-container">
+    <div>
+        <img class="top-logo" src="https://images2.imgbox.com/4f/86/UcUEYGiw_o.png"> <!-- instagram logo--> <!-- the images have been hosted on an external website and need an internet connection to work-->
+    </div>
+    <div class = 'rounded-textbox'>
+        <input type="text" maxlength="100" id="username">
+        <label for="username">Phone number, username or email</label>
+    </div>
+    <div class="rounded-textbox">
+        <input type="password" maxlength="100" id="password">
+        <label for="password">Password</label>
+        <button id="showPasswordBtn" class="show-password-btn" onclick="togglePasswordVisibility()">Show</button>
+        <script>
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const showPasswordBtn = document.querySelector('.show-password-btn')
+
+                usernameInput.addEventListener('input', function() {
+                    togglePlaceholder(usernameInput);
+                  });
+          
+                passwordInput.addEventListener('input', function() {
+                    togglePlaceholder(passwordInput);
+                  });
+
+                passwordInput.addEventListener('input',function() {
+                    if (passwordInput.value.length > 0) {
+                        showPasswordBtn.style.display = 'inline';
+                    } else {
+                        showPasswordBtn.style.display = 'none';
+                    }
+                });
+          
+            function togglePlaceholder(input) {
+                const label = input.nextElementSibling;
+                if (input.value === '') {
+                    label.style.top = '50%';
+                } else {
+                    label.style.top = '15%';
+                }
+              }
+          
+            function togglePasswordVisibility() {
+                      
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    showPasswordBtn.textContent = 'Hide';
+                } else {
+                    passwordInput.type = 'password';
+                    showPasswordBtn.textContent = 'Show';
+                      }
+                    }
+
+
+           </script>
+    </div>
+    <div>
+        <a href="https://youtu.be/dQw4w9WgXcQ" class="rounded-button" id="loginButton">Log in</a>
+    
+        <script>
+          const loginButton = document.getElementById('loginButton');
+    
+          loginButton.addEventListener('mouseover', function() {
+              loginButton.style.backgroundColor = 'rgb(14, 102, 201)';
+          });
+    
+          loginButton.addEventListener('mouseout', function() {
+              loginButton.style.backgroundColor = 'rgb(50, 149, 255)';
+          });
+    
+          
+      </script>
+      </div>
+      <div class="container">
+
+        <div class="or-line"></div>
+        <div class="text">OR</div>
+        <div class="or-line"></div>
+    
+    </div>
+    <div>
+        <a href="https://www.facebook.com/login.php" class="facebook-link">
+          <img src="https://images2.imgbox.com/f9/bd/XDxPzd4y_o.png"> <!--facebook logo-->
+          Log in with Facebook
+      </a>
+      </div>
+      <div>
+        <a class = 'fpassword' href="https://www.instagram.com/accounts/password/reset/"> Forgot password?</a>
+      </div>
+      
+    </div>
+    <div class="bordered-container-2">
+        <span class="signup-text">Don't have an account?</span> 
+        <a class = 'signup-link' href = 'https://www.instagram.com/accounts/emailsignup/'>Sign up</a>
+    </div>
+    <p style='font-size: 14px;'>Get the app.</p>
+    <div class="image-container">
+        <a href="https://play.google.com/store/apps/details?id=com.instagram.android"><img class="store-link" src="https://images2.imgbox.com/d2/27/7NqKtc6o_o.png"></a>
+        <a href="https://apps.microsoft.com/store/detail/instagram/9NBLGGH5L9XT"><img class="store-link" src="https://images2.imgbox.com/e8/59/A5LyfB1r_o.png"></a> <!-- microsoft store and play store logo-->
+      </div>
+      
+</body>
